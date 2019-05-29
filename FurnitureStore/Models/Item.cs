@@ -17,7 +17,7 @@ namespace FurnitureStore.Models
         public int id { get; set; }
         public string itemName { get; set; }
         public string itemDescription { get; set; }
-        public Nullable<int> quanity { get; set; }
         public Nullable<decimal> price { get; set; }
+        public Nullable<int> quantity { get; set; }
     }
 }

@@ -73,7 +73,7 @@ namespace FurnitureStore.Controllers
                 Item item = db.Items.SingleOrDefault(x => x.id == i.id);
                 decimal difference = decimal.Parse(usr.funds.ToString()) - cost;
                 usr.funds = difference;
-                item.quanity -= 1;
+                item.quantity -= 1;
                 db.Users.AddOrUpdate(usr);
                 db.Items.AddOrUpdate(item);
                 db.SaveChanges();

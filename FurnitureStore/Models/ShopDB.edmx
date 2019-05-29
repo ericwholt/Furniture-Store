@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ShopDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ShopDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Items">
           <Key>
             <PropertyRef Name="id" />
@@ -12,7 +12,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="itemName" Type="nvarchar" MaxLength="30" />
           <Property Name="itemDescription" Type="nvarchar" MaxLength="50" />
-          <Property Name="quanity" Type="int" />
+          <Property Name="quantity" Type="int" />
           <Property Name="price" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Users">
@@ -28,8 +28,7 @@
           <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ShopDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -40,8 +39,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="itemName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="itemDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="quanity" Type="Int32" />
           <Property Name="price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="quantity" Type="Int32" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -65,10 +64,10 @@
           <EntitySetMapping Name="Items">
             <EntityTypeMapping TypeName="ShopDBModel.Item">
               <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="itemName" ColumnName="itemName" />
                 <ScalarProperty Name="itemDescription" ColumnName="itemDescription" />
-                <ScalarProperty Name="quanity" ColumnName="quanity" />
                 <ScalarProperty Name="price" ColumnName="price" />
               </MappingFragment>
             </EntityTypeMapping>
